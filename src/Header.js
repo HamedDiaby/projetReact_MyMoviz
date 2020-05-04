@@ -27,14 +27,12 @@ function Header(){
                     <PopoverBody>
                         <ListGroup>
                             <ListGroupItem>
-                            <Media>
-                                <Media left href="#">
-                                    <Media object data-src="./img/maleficent.jpg" alt="Generic placeholder image" />
-                                </Media>
-                                <Media body>
-                                    Maléfique : Le pouvoir du mal
-                                </Media>
-                            </Media>
+                                <img width="30%" src="./img/maleficent.jpg"/>
+                                Maléfique : Le pouvoir du mal
+                            </ListGroupItem>
+                            <ListGroupItem>
+                                <img width="30%" src="./img/jumanji.jpg"/>
+                                Jumanji : The Next Level
                             </ListGroupItem>
                         </ListGroup>
                     </PopoverBody>

@@ -23,16 +23,16 @@ function App() {
       description : 'L\'equipe est de retour, mais le jeu à changé. Alors qu\'ils retournent dans Jumanji pour secourir ...'
     },
   ];
-  var moviesList = [];
-  for(var i = 0; i < moviesData.length; i++){
-    moviesList.push(<Movies movieImg={moviesData[i].img} movieTitle={moviesData[i].title} movieDescription={moviesData[i].description} />);
-  }
-  // var moviesList = moviesData.map(function(img, title, description) {
-  //   return <Movies movieImg={img} movieTitle={title} movieDescription={description} />;
-  // });
+  // var moviesList = [];
+  // for(var i = 0; i < moviesData.length; i++){
+  //   moviesList.push(<Movies movieImg={moviesData[i].img} movieTitle={moviesData[i].title} movieDescription={moviesData[i].description} />);
+  // }
+  var moviesList = moviesData.map(function(movie, i) {
+    return <Movies movieImg={movie.img} movieTitle={movie.title} movieDescription={movie.description} />;
+  });
 
   return (
-    <div className="App">
+    <div style={ {backgroundColor: '#2c3336'} } className="App">
       <Container>
         <Header />
           <Row>

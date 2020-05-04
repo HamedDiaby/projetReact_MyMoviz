@@ -15,7 +15,7 @@ import { faHeart, faVideo, faStar } from '@fortawesome/free-solid-svg-icons';
 
     return (
         <Col lg="4" md="6" sm="12">
-            <Card>
+            <Card style ={ {marginBottom: 70} }>
                 <CardImg top width="100%" src={props.movieImg} alt="Card image cap" />
                 <CardBody>
                     <CardText>
