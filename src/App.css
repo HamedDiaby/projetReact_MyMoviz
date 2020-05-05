@@ -1,3 +1,9 @@
+.like{
+  cursor: pointer;
+}
+.showMovie {
+  cursor: pointer;
+}
 /* .App{
   background-color: #2c3336;
   height: 100vh;

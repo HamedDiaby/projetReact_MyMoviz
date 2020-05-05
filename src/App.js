@@ -21,7 +21,7 @@ function App() {
       img : './img/jumanji.jpg',
       title : 'Jumanji : The Next Level',
       description : 'L\'equipe est de retour, mais le jeu à changé. Alors qu\'ils retournent dans Jumanji pour secourir ...'
-    },
+    }
   ];
   // var moviesList = [];
   // for(var i = 0; i < moviesData.length; i++){
