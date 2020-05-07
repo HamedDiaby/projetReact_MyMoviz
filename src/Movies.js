@@ -39,9 +39,14 @@ import { faHeart, faVideo, faStar } from '@fortawesome/free-solid-svg-icons';
         if(likeStatus == false){
             setLikeColor('#e74c3c');
             setLikeStatus(true);
+            
+            props.handleClickAddMovieParent(props.movieTitle, 1, props.movieImg);
+
         } else {
             setLikeColor('#212529');
             setLikeStatus(false);
+
+            props.handleClickAddMovieParent(props.movieTitle, -1, props.movieImg);
         }
     }
 
@@ -71,6 +76,8 @@ import { faHeart, faVideo, faStar } from '@fortawesome/free-solid-svg-icons';
     var updateStarsColor = (pos)=> {
         setStarsCount(pos + 1);
     }
+
+    props.whishList
 
     return (
         <Col lg="4" md="6" sm="12">

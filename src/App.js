@@ -1,10 +1,29 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import Header from './Header';
 import Movies from './Movies';
 import { Container, Row } from 'reactstrap';
 
-function App() {
+function App(props) {
+
+  const [moviesCount, setMoviesCount] = useState(0);
+  const [whishListMoviesData, setWhishListMoviesData] = useState([]);
+
+  var handleClickAddMovie = (movie, like, url)=> {
+    if(like == -1){
+      setWhishListMoviesData( whishListMoviesData.filter( (e)=>(e.movie !== movie) ) );
+    }else {
+      setWhishListMoviesData( [...whishListMoviesData, {movie:movie, url:url}] );
+    }
+    setMoviesCount(moviesCount + like);
+  }
+
+  var handleClickDeleteMovie = (monObjet)=> {
+    setWhishListMoviesData( whishListMoviesData.filter( (e)=>(e.movie !== monObjet.movie) ) );
+    setMoviesCount(moviesCount - 1);
+    // console.log(props);
+    // console.log("++++++", monObjet);
+  }
 
   var moviesData = [
     {
@@ -28,13 +47,13 @@ function App() {
   //   moviesList.push(<Movies movieImg={moviesData[i].img} movieTitle={moviesData[i].title} movieDescription={moviesData[i].description} />);
   // }
   var moviesList = moviesData.map(function(movie, i) {
-    return <Movies movieImg={movie.img} movieTitle={movie.title} movieDescription={movie.description} />;
+    return <Movies whishList={whishListMoviesData} handleClickAddMovieParent={handleClickAddMovie} movieImg={movie.img} movieTitle={movie.title} movieDescription={movie.description} />;
   });
-
+  
   return (
     <div style={ {backgroundColor: '#2c3336'} } className="App">
       <Container>
-        <Header />
+        <Header whishListMoviesCount={moviesCount} movieWhishList={whishListMoviesData} handlevClickDeleteMovieParent={handleClickDeleteMovie}/>
           <Row>
             { moviesList }
           </Row>
